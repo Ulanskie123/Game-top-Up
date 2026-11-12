@@ -1,4 +1,4 @@
-# TopUp Hub – game top-up store (CODM + Mobile Legends)
+# TopUp Ulan – game top-up store (CODM + Mobile Legends)
 
 ## Run in VS Code
 1. File → Open Folder → `topup-store`
