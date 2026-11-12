@@ -1,0 +1,28 @@
+{
+  "games": [
+    {
+      "id": "codm",
+      "name": "Call of Duty: Mobile",
+      "currency": "CP",
+      "needsZone": false,
+      "packages": [
+        { "id": "codm-80",   "label": "80 CP",   "price": 59,  "sku": "CODM_80" },
+        { "id": "codm-400",  "label": "400 CP",  "price": 289, "sku": "CODM_400" },
+        { "id": "codm-800",  "label": "800 CP",  "price": 569, "sku": "CODM_800" },
+        { "id": "codm-2000", "label": "2000 CP", "price": 1399, "sku": "CODM_2000" }
+      ]
+    },
+    {
+      "id": "ml",
+      "name": "Mobile Legends",
+      "currency": "Diamonds",
+      "needsZone": true,
+      "packages": [
+        { "id": "ml-86",   "label": "86 Diamonds",   "price": 75,  "sku": "ML_86" },
+        { "id": "ml-172",  "label": "172 Diamonds",  "price": 150, "sku": "ML_172" },
+        { "id": "ml-257",  "label": "257 Diamonds",  "price": 225, "sku": "ML_257" },
+        { "id": "ml-706",  "label": "706 Diamonds",  "price": 600, "sku": "ML_706" }
+      ]
+    }
+  ]
+}

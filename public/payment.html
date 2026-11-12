@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pay-box { text-align: center; margin: 18px 0; }
+    .pay-box .qr {
+      display: inline-block;
+      background: #fff;
+      padding: 12px;
+      border-radius: 12px;
+    }
+    .pay-box .qr img,
+    .pay-box .qr canvas { display: block; }
+    .pay-box .qr img.mine { width: 220px; height: 220px; object-fit: contain; }
+    .pay-box svg { background: #fff; border-radius: 8px; padding: 8px; max-width: 100%; }
+    .steps { margin: 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
+    .copy {
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 2px 10px;
+      margin-left: 8px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .copy:hover { border-color: var(--accent); }
+    .big { font-size: 20px; letter-spacing: 1px; }
+    .hint { color: var(--muted); font-size: 12px; text-align: center; margin: 10px 0 0; }
+
+    /* ---- GCash-style blue layout ---- */
+    body.wallet { background: #eceef2; }
+    body.wallet .nav { background: #0b57d0; border: 0; justify-content: center; padding: 22px 0 70px; }
+    body.wallet .nav .brand { color: #fff; font-size: 24px; }
+    body.wallet main { margin-top: -50px; }
+    body.wallet .receipt { background: #fff; color: #2d3e63; border: 0; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+    body.wallet .receipt h1, body.wallet .receipt dd { color: #2d3e63 !important; }
+    body.wallet .receipt dt, body.wallet .muted, body.wallet .steps, body.wallet .hint { color: #6b7a99 !important; }
+    body.wallet .copy { color: #0b57d0; border-color: #c9d6f2; }
+    body.wallet .cta { background: #0b57d0; color: #fff; }
+    .scanline { color: #3b5183; font-size: 18px; font-weight: 600; margin: 8px 0 14px; }
+    .scanamt { color: #0b57d0; font-size: 22px; font-weight: 700; margin: 12px 0 0; }
+    .pay-box .qr.mine { border: 1px solid #e3e8f4; padding: 14px; }
+    .pay-box .qr img.mine { width: 260px; height: 260px; }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <a class="brand" href="/"><span class="logo">T</span>TopUp Ulan</a>
+  </header>
+
+  <main>
+    <section class="receipt">
+      <h1 style="color:inherit" id="title">Payment</h1>
+      <p class="muted" id="sub">Loading your order…</p>
+
+      <div class="pay-box" id="visual"></div>
+
+      <dl id="info"></dl>
+
+      <ol class="steps" id="steps"></ol>
+
+      <p class="err" id="err" role="alert"></p>
+
+      <button class="cta" id="pay" style="width:100%;margin-top:16px" disabled>
+        Complete the payment
+      </button>
+
+      <p class="hint">
+        After you tap the button, we check your payment. Your credits are sent once it is confirmed.
+      </p>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+  <script>
+    // ---- Put YOUR own receiving details here ----
+    const STORE = {
+      name: "TopUp Ulan",
+      gcash: "09123456789",
+      maya: "09123456789",
+      coins: "09123456789",
+      // Your own InstaPay QR (put my-qr.jpg in the same folder as this file)
+      // Leave "" to show the sample QR instead.
+      gcashQR: "img/my-qr.jpg",
+      mayaQR: "",
+      coinsQR: ""
+    };
+
+    const id = new URLSearchParams(location.search).get('order');
+    const $ = s => document.getElementById(s);
+    const peso = n => '₱' + Number(n).toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const when = d => new Date(d).toLocaleString('en-PH', { dateStyle: 'medium', timeStyle: 'short' });
+
+    // 12-digit payment code made from the order number (same every time)
+    function payRef(orderId) {
+      let h = 0;
+      for (const c of orderId) h = (h * 31 + c.charCodeAt(0)) % 1000000007;
+      return String(h).padStart(10, '0') + String((orderId.length * 7919) % 100).padStart(2, '0');
+    }
+    const group = s => s.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+    function row(label, value, copyText) {
+      const btn = copyText
+        ? ` <button class="copy" type="button" data-copy="${copyText}">Copy</button>`
+        : '';
+      return `<dt>${label}</dt><dd>${value}${btn}</dd>`;
+    }
+
+    function render(o) {
+      const name = o.payment.toLowerCase();
+      const deadline = when(new Date(new Date(o.createdAt).getTime() + 24 * 3600 * 1000));
+      let rows = '';
+      let steps = [];
+
+      $('title').textContent = 'Pay with ' + o.payment;
+      $('sub').textContent = 'Order ' + o.id;
+
+      if (/gcash|maya|coins/.test(name)) {
+        // ---- e-wallet: QR + number to send to ----
+        const isG = /gcash/.test(name), isM = /maya/.test(name);
+        const number = isG ? STORE.gcash : isM ? STORE.maya : STORE.coins;
+        const myQR = isG ? STORE.gcashQR : isM ? STORE.mayaQR : STORE.coinsQR;
+
+        if (myQR) {
+          // your own real QR image, wallet-style layout
+          if (isG) document.body.classList.add('wallet');
+          $('visual').innerHTML =
+            `<p class="scanline">Open your GCash, Maya or bank app and scan this QR</p>` +
+            `<div class="qr mine"><img class="mine" src="${myQR}" alt="${STORE.name} QR"></div>` +
+            `<p class="scanamt">Send exactly ${peso(o.total)}</p>` +
+            `<p class="hint">InstaPay QR: enter the amount after scanning, and put ${o.id} in the message.</p>`;
+        } else {
+          $('visual').innerHTML = '<div class="qr" id="qr"></div><p class="hint">Sample QR for this order</p>';
+          if (typeof QRCode !== 'undefined') {
+            new QRCode($('qr'), { text: `TOPUPULAN|${o.id}|${o.total}`, width: 180, height: 180 });
+          } else {
+            $('qr').textContent = 'QR could not load (check your internet).';
+          }
+        }
+        rows =
+          row('Send to', STORE.name) +
+          row('Number', number, number.replace(/\s/g, '')) +
+          row('Amount', peso(o.total), String(o.total)) +
+          row('Reference', o.id, o.id) +
+          row('Pay before', deadline);
+        steps = [
+          `Open your ${o.payment} app and scan the QR, or choose Send Money.`,
+          `Send exactly ${peso(o.total)} to the number above.`,
+          `Put ${o.id} in the message or reference.`,
+          'Come back here and tap the button below.'
+        ];
+      } else if (/7-eleven|cliqq/.test(name)) {
+        // ---- 7-Eleven: barcode + payment code ----
+        const code = payRef(o.id);
+        $('visual').innerHTML = '<svg id="bc"></svg>';
+        if (typeof JsBarcode !== 'undefined') {
+          JsBarcode('#bc', code, { format: 'CODE128', height: 70, displayValue: false });
+        }
+        rows =
+          row('Payment code', `<span class="big">${group(code)}</span>`, code) +
+          row('Amount', peso(o.total), String(o.total)) +
+          row('Pay before', deadline);
+        steps = [
+          'Go to any 7-Eleven and use the CLiQQ kiosk.',
+          'Show the barcode or enter the payment code.',
+          `Pay exactly ${peso(o.total)} at the counter.`,
+          'Come back here and tap the button below.'
+        ];
+      } else {
+        // ---- card / SIM load / others ----
+        const code = payRef(o.id);
+        $('visual').innerHTML = '';
+        rows =
+          row('Reference no.', group(code), code) +
+          row('Amount', peso(o.total), String(o.total)) +
+          (o.payerMasked ? row('Charged to', o.payerMasked) : '') +
+          row('Pay before', deadline);
+        steps = [
+          `Confirm the ${peso(o.total)} charge with ${o.payment}.`,
+          'Come back here and tap the button below.'
+        ];
+      }
+
+      $('info').innerHTML =
+        row('Game', o.game) + row('Item', o.item || o.pack) + rows;
+      $('steps').innerHTML = steps.map(s => `<li>${s}</li>`).join('');
+      $('pay').disabled = false;
+
+      document.querySelectorAll('.copy').forEach(b => {
+        b.onclick = () => {
+          navigator.clipboard.writeText(b.dataset.copy);
+          b.textContent = 'Copied';
+          setTimeout(() => (b.textContent = 'Copy'), 1200);
+        };
+      });
+    }
+
+    fetch('/api/orders/' + encodeURIComponent(id || ''))
+      .then(async r => {
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error);
+        // Already reported, paid or rejected: go straight to the status page
+        if (j.order.status !== 'pending_payment') {
+          location.replace('/?order=' + encodeURIComponent(j.order.id));
+          return;
+        }
+        render(j.order);
+      })
+      .catch(ex => {
+        $('sub').textContent = '';
+        $('err').textContent = ex.message;
+      });
+
+    $('pay').onclick = async () => {
+      const btn = $('pay');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        // This only tells the shop "I paid". The shop approves it after checking.
+        const r = await fetch('/api/orders/' + encodeURIComponent(id) + '/report', { method: 'POST' });
+        if (!r.ok) throw new Error((await r.json()).error);
+        location.href = '/?order=' + encodeURIComponent(id);
+      } catch (ex) {
+        $('err').textContent = ex.message;
+        btn.disabled = false;
+        btn.textContent = "I've sent the payment";
+      }
+    };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "PHP server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "\"C:\\xampp\\php\\php.exe\" -S localhost:3000 -t public router.php"
+    }
+  ]
+}

@@ -1,0 +1,581 @@
+[
+    {
+        "id": "TU-MVUN6BWN",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "213213123123"
+        },
+        "email": "rainjustin.raymundo@email.lcup.edu.ph",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T07:19:34Z",
+        "paidAt": "2026-10-30T07:19:44Z"
+    },
+    {
+        "id": "TU-MVUN7BWB",
+        "game": "Mobile Legends: Bang Bang",
+        "pack": 5,
+        "item": "5 Diamonds",
+        "account": {
+            "userId": "123123123",
+            "zoneId": "123123123"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 6.25,
+        "fee": 0,
+        "vat": 0,
+        "total": 6.25,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T07:20:20Z",
+        "paidAt": "2026-10-30T07:20:22Z"
+    },
+    {
+        "id": "TU-MVUNNZ2A",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "32123123213"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T07:33:17Z",
+        "paidAt": "2026-10-30T07:33:37Z"
+    },
+    {
+        "id": "TU-MVUOLF1W",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "213123123123"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T07:59:17Z",
+        "paidAt": "2026-10-30T07:59:20Z"
+    },
+    {
+        "id": "TU-MVUPFFO8",
+        "game": "Mobile Legends: Bang Bang",
+        "pack": 5,
+        "item": "5 Diamonds",
+        "account": {
+            "userId": "2131232",
+            "zoneId": "3123123"
+        },
+        "email": "",
+        "payment": "Maya",
+        "payerMobile": null,
+        "price": 6.25,
+        "fee": 0,
+        "vat": 0,
+        "total": 6.25,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T08:22:38Z",
+        "paidAt": "2026-10-30T08:22:41Z"
+    },
+    {
+        "id": "TU-MVUPJBVG",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "423234234"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:25:40Z",
+        "rejectedAt": "2026-10-30T09:35:38Z"
+    },
+    {
+        "id": "TU-MVUPLBJE",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "122288582569"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T08:27:12Z",
+        "paidAt": "2026-10-30T08:27:20Z"
+    },
+    {
+        "id": "TU-MVUPQZ7Z",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "1234567890"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:31:36Z",
+        "rejectedAt": "2026-10-30T09:35:37Z"
+    },
+    {
+        "id": "TU-MVUPR4SC",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "1234567890"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:31:44Z",
+        "rejectedAt": "2026-10-30T09:35:36Z"
+    },
+    {
+        "id": "TU-MVUQ5CJ1",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "2131212"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:42:47Z",
+        "rejectedAt": "2026-10-30T09:35:34Z"
+    },
+    {
+        "id": "TU-MVUQ68XB",
+        "game": "Call of Duty: Mobile",
+        "pack": 800,
+        "item": "800 CP",
+        "account": {
+            "userId": "32112312321"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 490,
+        "fee": 0,
+        "vat": 0,
+        "total": 490,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:43:29Z",
+        "rejectedAt": "2026-10-30T09:35:33Z"
+    },
+    {
+        "id": "TU-MVUQ7NXK",
+        "game": "Call of Duty: Mobile",
+        "pack": 10000,
+        "item": "10,000 CP",
+        "account": {
+            "userId": "23123123123"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 5900,
+        "fee": 0,
+        "vat": 0,
+        "total": 5900,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T08:44:35Z",
+        "paidAt": "2026-10-30T08:44:39Z"
+    },
+    {
+        "id": "TU-MVUQ8HIA",
+        "game": "Call of Duty: Mobile",
+        "pack": 10000,
+        "item": "10,000 CP",
+        "account": {
+            "userId": "544534"
+        },
+        "email": "",
+        "payment": "Smart",
+        "payerMobile": "09789687678",
+        "price": 5900,
+        "fee": 2360,
+        "vat": 0,
+        "total": 8260,
+        "status": "paid_demo",
+        "createdAt": "2026-10-30T08:45:13Z",
+        "paidAt": "2026-10-30T08:45:20Z"
+    },
+    {
+        "id": "TU-MVUQ9PLW",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "123456789123456"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:46:10Z",
+        "rejectedAt": "2026-10-30T09:23:27Z"
+    },
+    {
+        "id": "TU-MVUQA5JB",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "1231232121"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "rejected",
+        "createdAt": "2026-10-30T08:46:31Z",
+        "rejectedAt": "2026-10-30T09:22:13Z"
+    },
+    {
+        "id": "TU-7040582A",
+        "game": "Call of Duty: Mobile",
+        "pack": 800,
+        "item": "800 CP",
+        "account": {
+            "userId": "33123123"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 490,
+        "fee": 0,
+        "vat": 0,
+        "total": 490,
+        "status": "paid",
+        "createdAt": "2026-10-30T08:57:27Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T08:57:33Z",
+        "paidAt": "2026-10-30T09:14:57Z"
+    },
+    {
+        "id": "TU-32109DE1",
+        "game": "Mobile Legends: Bang Bang",
+        "pack": 11,
+        "item": "11 Diamonds (10 + 1 Bonus)",
+        "account": {
+            "userId": "21312321312",
+            "zoneId": "12312123"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 12.49,
+        "fee": 0,
+        "vat": 0,
+        "total": 12.49,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:01:43Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:01:50Z",
+        "paidAt": "2026-10-30T09:14:55Z"
+    },
+    {
+        "id": "TU-DA2D3729",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "234234234"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:08:06Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:08:07Z",
+        "paidAt": "2026-10-30T09:14:51Z"
+    },
+    {
+        "id": "TU-1CB6981A",
+        "game": "Mobile Legends: Bang Bang",
+        "pack": 570,
+        "item": "570 Diamonds",
+        "account": {
+            "userId": "312312312",
+            "zoneId": "12312312"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 624.68,
+        "fee": 0,
+        "vat": 0,
+        "total": 624.68,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:18:34Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:18:39Z",
+        "paidAt": "2026-10-30T09:20:37Z"
+    },
+    {
+        "id": "TU-11EAAAF0",
+        "game": "Call of Duty: Mobile",
+        "pack": 5000,
+        "item": "5,000 CP",
+        "account": {
+            "userId": "696969696969"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 2990,
+        "fee": 0,
+        "vat": 0,
+        "total": 2990,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:28:20Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:28:23Z",
+        "paidAt": "2026-10-30T09:30:33Z"
+    },
+    {
+        "id": "TU-7884B768",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "21321321"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:30:11Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:30:14Z",
+        "paidAt": "2026-10-30T09:30:24Z"
+    },
+    {
+        "id": "TU-6DD31026",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "100000000000"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "rejected",
+        "createdAt": "2026-10-30T09:34:50Z",
+        "ip": "127.0.0.1",
+        "rejectedAt": "2026-10-30T09:35:30Z"
+    },
+    {
+        "id": "TU-E485F682",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "100000000000"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "rejected",
+        "createdAt": "2026-10-30T09:35:16Z",
+        "ip": "127.0.0.1",
+        "rejectedAt": "2026-10-30T09:35:28Z"
+    },
+    {
+        "id": "TU-B36FED5A",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "1000092"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:37:55Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:38:04Z",
+        "paidAt": "2026-10-30T09:40:39Z"
+    },
+    {
+        "id": "TU-5F72B604",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "1000000000000"
+        },
+        "email": "",
+        "payment": "Maya",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "pending_payment",
+        "createdAt": "2026-10-30T09:38:30Z",
+        "ip": "::1"
+    },
+    {
+        "id": "TU-9DBFF53A",
+        "game": "Call of Duty: Mobile",
+        "pack": 80,
+        "item": "80 CP",
+        "account": {
+            "userId": "123456789"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 49,
+        "fee": 0,
+        "vat": 0,
+        "total": 49,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:38:41Z",
+        "ip": "127.0.0.1",
+        "reportedAt": "2026-10-30T09:38:48Z",
+        "paidAt": "2026-10-30T09:44:48Z"
+    },
+    {
+        "id": "TU-8B58762C",
+        "game": "Mobile Legends: Bang Bang",
+        "pack": 22,
+        "item": "22 Diamonds",
+        "account": {
+            "userId": "2312312",
+            "zoneId": "213123"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 24.99,
+        "fee": 0,
+        "vat": 0,
+        "total": 24.99,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:43:51Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:43:52Z",
+        "paidAt": "2026-10-30T09:44:47Z"
+    },
+    {
+        "id": "TU-A4676900",
+        "game": "Call of Duty: Mobile",
+        "pack": 400,
+        "item": "400 CP",
+        "account": {
+            "userId": "1111111111"
+        },
+        "email": "",
+        "payment": "Maya",
+        "payerMobile": null,
+        "price": 245,
+        "fee": 0,
+        "vat": 0,
+        "total": 245,
+        "status": "paid",
+        "createdAt": "2026-10-30T09:45:36Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-30T09:45:40Z",
+        "paidAt": "2026-10-30T09:45:54Z"
+    },
+    {
+        "id": "TU-96055465",
+        "game": "Call of Duty: Mobile",
+        "pack": 10000,
+        "item": "10,000 CP",
+        "account": {
+            "userId": "1312321321"
+        },
+        "email": "",
+        "payment": "GCash",
+        "payerMobile": null,
+        "price": 5900,
+        "fee": 0,
+        "vat": 0,
+        "total": 5900,
+        "status": "awaiting_confirmation",
+        "createdAt": "2026-10-31T05:57:33Z",
+        "ip": "::1",
+        "reportedAt": "2026-10-31T05:57:40Z"
+    }
+]
